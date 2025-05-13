@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>דו״ח מחקר – כניסת לאומית לאסתטיקה</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50 font-sans leading-relaxed text-gray-800">
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-4 text-center">דו״ח מחקר – כניסת לאומית לתחום טיפולי האסתטיקה</h1>
+
+    <!-- Executive Summary -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-2">תקציר מנהלים</h2>
+      <p class="mb-2">
+        שוק הרפואה האסתטית בישראל מוערך בכ־8 מיליארד דולר בשנה, עם צמיחה שנתית של 7‑9 %.
+        ההמלצה: פיילוט היברידי – 3 מרפאות דגל בבעלות לאומית (ת״א, ירושלים, חיפה)
+        בתוספת הסכם הנחות עם רשת CARE או פרופורציה לכיסוי אזורים נוספים.
+      </p>
+      <p>
+        <strong>יעד:</strong> Break‑Even בתוך 3 שנים בתרחיש בינוני, עם פוטנציאל לשיפור נאמנות וגיוס מבוטחות,
+        בעיקר במגזר החרדי ובפלח נשים 25‑45 במרכז הארץ.
+      </p>
+    </section>
+
+    <!-- Market Overview -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-2">סקירת שוק – נתונים מרכזיים</h2>
+      <ul class="list-disc pr-5 space-y-1">
+        <li>שוק בהיקף ≈ 8 מיליארד $ שנתי, צמיחה מתמדת.</li>
+        <li>הטיפול הפופולרי ביותר: הזרקות בוטוקס (52 % מהרופאים).</li>
+        <li>ביקוש במגזר חרדי: עלייה של 18 % בשלוש שנים.</li>
+        <li>רשתות מובילות: Care Laser (33), פרופורציה (14), רונית רפאל (12).</li>
+        <li>קופות מתחרות: כללית אסתטיקה (20+), מכבי אסתטיקה (6), מאוחדת בוטיק (5).</li>
+      </ul>
+    </section>
+
+    <!-- Treatments Popularity Chart -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-2">דירוג טיפולים מבוקשים</h2>
+      <canvas id="treatmentsChart" height="260"></canvas>
+    </section>
+
+    <!-- Network Comparison Table -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-2">מיפוי רשתות אסתטיקה בישראל</h2>
+      <div class="overflow-x-auto">
+      <table class="min-w-full bg-white rounded-lg shadow text-sm">
+        <thead>
+          <tr class="bg-gray-100 text-right">
+            <th class="px-4 py-2">רשת</th>
+            <th class="px-4 py-2"># סניפים</th>
+            <th class="px-4 py-2">מיצוב</th>
+            <th class="px-4 py-2">תחומי ליבה</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="border px-4 py-2">Care Laser</td><td class="border px-4 py-2">33</td><td class="border px-4 py-2">אמינות, מחיר בינוני</td><td class="border px-4 py-2">לייזר שיער, עיניים, הזרקות</td></tr>
+          <tr class="bg-gray-50"><td class="border px-4 py-2">פרופורציה</td><td class="border px-4 py-2">14</td><td class="border px-4 py-2">Value for Money</td><td class="border px-4 py-2">ניתוחים, הזרקות</td></tr>
+          <tr><td class="border px-4 py-2">רונית רפאל</td><td class="border px-4 py-2">12</td><td class="border px-4 py-2">מותג פרימיום</td><td class="border px-4 py-2">אנטי‑אייג׳ינג, טיפול עור</td></tr>
+          <tr class="bg-gray-50"><td class="border px-4 py-2">ד״ר אלמן / מכבי אסתטיקה</td><td class="border px-4 py-2">6</td><td class="border px-4 py-2">דרמו‑אסתטיקה רפואית</td><td class="border px-4 py-2">לייזר עור, הזרקות</td></tr>
+          <tr><td class="border px-4 py-2">כללית אסתטיקה</td><td class="border px-4 py-2">20+</td><td class="border px-4 py-2">חלוצה, פריסה ארצית</td><td class="border px-4 py-2">כל התחומים</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- Model Comparison Chart -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-2">מודלים עסקיים – השוואה</h2>
+      <canvas id="modelsChart" height="280"></canvas>
+    </section>
+
+    <!-- Cost Scenarios -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-2">תרחישי תקציב והיקף פעילות</h2>
+      <div class="overflow-x-auto">
+      <table class="min-w-full bg-white rounded-lg shadow text-sm">
+        <thead>
+          <tr class="bg-gray-100 text-right">
+            <th class="px-4 py-2">תרחיש</th>
+            <th class="px-4 py-2"># מרפאות</th>
+            <th class="px-4 py-2">CAPEX (מ׳ ₪)</th>
+            <th class="px-4 py-2">Break‑Even</th>
+            <th class="px-4 py-2">כיסוי ארצי</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="border px-4 py-2">בסיסי</td><td class="border px-4 py-2">2</td><td class="border px-4 py-2">≈ 5</td><td class="border px-4 py-2">4 שנים</td><td class="border px-4 py-2">40 %</td></tr>
+          <tr class="bg-gray-50"><td class="border px-4 py-2">בינוני</td><td class="border px-4 py-2">5</td><td class="border px-4 py-2">≈ 12‑15</td><td class="border px-4 py-2">3 שנים</td><td class="border px-4 py-2">70 %</td></tr>
+          <tr><td class="border px-4 py-2">מורחב</td><td class="border px-4 py-2">8‑9</td><td class="border px-4 py-2">30+</td><td class="border px-4 py-2">5 שנים</td><td class="border px-4 py-2">90 %</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- SWOT -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-2">SWOT – נקודות מפתח</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="font-bold mb-1">Strengths</h3>
+          <ul class="list-disc pr-5">
+            <li>אמון רפואי גבוה</li>
+            <li>מומחיות במגזר החרדי</li>
+            <li>פריסת מרפאות קיימת</li>
+          </ul>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="font-bold mb-1">Weaknesses</h3>
+          <ul class="list-disc pr-5">
+            <li>תקציב השקעה מוגבל</li>
+            <li>מותג אסתטיקה לא קיים</li>
+          </ul>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="font-bold mb-1">Opportunities</h3>
+          <ul class="list-disc pr-5">
+            <li>שוק צומח ומהיר</li>
+            <li>קריסת אמריקן לייזר – חלון הזדמנות</li>
+            <li>גידול בביקוש חרדי</li>
+          </ul>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="font-bold mb-1">Threats</h3>
+          <ul class="list-disc pr-5">
+            <li>תחרות כללית/מכבי</li>
+            <li>רגולציה וסיכוני רשלנות</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center text-sm text-gray-500 mt-10">
+      © 2025 קופת חולים לאומית – דו״ח מחקר אסתטיקה
+    </footer>
+  </div>
+
+  <script>
+    // Treatments popularity chart
+    new Chart(
+      document.getElementById('treatmentsChart'),
+      {
+        type: 'bar',
+        data: {
+          labels: ['בוטוקס', 'הסרת שיער בלייזר', 'חומצה היאלורונית', 'פילינג/לייזר עור', 'טיפולי צלקות אקנה'],
+          datasets: [{
+            label: 'מדד ביקוש (יחסי)',
+            data: [100, 90, 70, 50, 30]
+          }]
+        },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true } }
+        }
+      }
+    );
+
+    // Models comparison chart
+    new Chart(
+      document.getElementById('modelsChart'),
+      {
+        type: 'bar',
+        data: {
+          labels: ['עצמאי', 'שותפות', 'היברידי'],
+          datasets: [
+            {
+              label: 'Time‑to‑Market (חודשים)',
+              data: [18, 6, 9]
+            },
+            {
+              label: 'CAPEX (מ׳ ₪)',
+              data: [30, 8, 15]
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          scales: { y: { beginAtZero: true } }
+        }
+      }
+    );
+  </script>
+</body>
+</html>
